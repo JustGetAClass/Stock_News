@@ -42,7 +42,7 @@ else:
 
 percentage_diff = round((difference / float(yesterday_closing_price)) * 100)
 
-if abs(percentage_diff) > 1:
+if abs(percentage_diff) > 5:
     news_params = {
         "apikey": NEWS_KEY,
         "qInTitle": COMPANY_NAME
