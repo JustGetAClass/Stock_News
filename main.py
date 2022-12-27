@@ -1,18 +1,22 @@
 from twilio.rest import Client
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv("C:/Users/Moham/PycharmProjects/Environment_Variables/.env")
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-ALPHA_KEY = "0ODSNWFL3WR2CYIK"
-NEWS_KEY = "1b61ada945fa44baab2c2459d6a83f17"
+ALPHA_KEY = os.getenv("alpha_key")
+NEWS_KEY = os.getenv("news_key")
 
-TWILIO_SID = "ACb7cc1fcd9a3ae4510b35a2bd8c7f1601"
-TWILIO_AUTH = "75f0476a4bb8da25ff7c7307821639e4"
+TWILIO_SID = os.getenv("account_sid")
+TWILIO_AUTH = os.getenv("auth_token")
 
-personal_number = "+254722366973"
+personal_number = os.getenv("personal_phone_no")
 
 alpha_parameters = {
     "function": "TIME_SERIES_DAILY_ADJUSTED",
